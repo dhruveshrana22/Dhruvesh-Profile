@@ -2,22 +2,23 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from './app/Screen/Home/Home';
-import BottomNavigationbar from './app/Component/BottomNavigation.js/BottomNavigation';
 import { Grid } from '@mui/material';
-
+import "./App.css"
+import NavbarCompo from './app/Component/Navbar';
 
 function App() {
   return (
     <>
-      <BottomNavigationbar />
-      <Grid container style={{ backgroundColor: 'black', height: '100vh', justifyContent: 'center', padding: 20 }}>
+
+      <NavbarCompo>
         <Router>
 
           <Routes>
             <Route path="/" element={<Home />} />
           </Routes>
+
         </Router>
-      </Grid>
+      </NavbarCompo>
     </>
   );
 }
