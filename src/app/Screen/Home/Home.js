@@ -6,7 +6,7 @@ const Home = () => {
     const isMobile = useMediaQuery('(max-width:600px)'); // Adjust the breakpoint as needed
 
     return (
-        <Grid container>
+        <Grid>
         </Grid>
     );
 };

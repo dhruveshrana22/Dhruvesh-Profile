@@ -5,12 +5,14 @@ import Home from './app/Screen/Home/Home';
 import { Grid } from '@mui/material';
 import "./App.css"
 import NavbarCompo from './app/Component/Navbar';
+import Follow from './app/Component/Follow';
 
 function App() {
   return (
     <>
 
-      <NavbarCompo>
+      <NavbarCompo/>
+        <Follow/>
         <Router>
 
           <Routes>
@@ -18,7 +20,6 @@ function App() {
           </Routes>
 
         </Router>
-      </NavbarCompo>
     </>
   );
 }

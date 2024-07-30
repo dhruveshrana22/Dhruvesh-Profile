@@ -6,7 +6,6 @@ body {
   font-family: 'Raleway', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  padding: 30px;
   border-left: 10px solid var(--primary-color);
   border-right: 10px solid var(--primary-color);
 }
