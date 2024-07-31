@@ -11,6 +11,8 @@ function App() {
   return (
     <>
       <Router>
+        <NavbarCompo />
+
         <Follow />
 
         <Routes>
