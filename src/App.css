@@ -10,3 +10,47 @@ body {
   border-right: 10px solid var(--primary-color);
 }
 
+@keyframes slideIn {
+  from {
+    transform: translate(-50%, -100%);
+  }
+  to {
+    transform: translate(-50%, -50%);
+  }
+},
+@keyframes slideRightToLeft {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+/* AnimatedText.css */
+
+.animated-text {
+  color: white;
+  cursor: pointer;
+  animation: slideRightToLeft 2s ease-in-out forwards;
+  animation-delay: var(--animation-delay);
+  font-family:cursive;
+}
+
+.animated-text:hover {
+  color: rgb(255, 4, 4); /* Basic hover effect */
+}
+
+/* Media Queries for different screen sizes */
+@media (max-width: 600px) {
+  .animated-text:hover {
+    color: lightgreen; /* Hover effect for small screens */
+  }
+}
+
+@media (min-width: 601px) and (max-width: 768px) {
+  .animated-text:hover {
+    color: #fd0808; /* Hover effect for medium screens */
+  }
+}

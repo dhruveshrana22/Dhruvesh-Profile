@@ -1,14 +1,57 @@
 import React, { useState } from "react";
-import { Box, Grid, useMediaQuery, Modal, Fade } from "@mui/material";
+import {
+  Box,
+  Grid,
+  useMediaQuery,
+  Modal,
+  Fade,
+  Typography,
+} from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
+import { useNavigate } from "react-router-dom"; // Import useNavigate
+import { hover } from "@testing-library/user-event/dist/hover";
+
+const AnimatedText = ({
+  text,
+  animation,
+  delay,
+  onClick,
+  cursor = "default",
+  style,
+  className,
+}) => (
+  <Typography
+    className={className}
+    variant="h2"
+    sx={{
+      color: "white",
+      animation: `${animation} 2s ease-in-out forwards`,
+      animationDelay: `${delay}`,
+      cursor: cursor, // Use cursor prop for cursor style
+    }}
+    style={style} // Use style prop for additional inline styles
+    onClick={onClick}
+  >
+    {text}
+  </Typography>
+);
 
 const NavbarCompo = () => {
   const [open, setOpen] = useState(false);
   const isMobile = useMediaQuery("(max-width:600px)");
   const istablet = useMediaQuery("(max-width:768px)");
+  const isDesktop = useMediaQuery("(max-width:1440px)");
+  const navigate = useNavigate(); // Use useNavigate instead of useNavigation
 
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
+
+  const textItems = [
+    { text: "Home", delay: "0s", path: "/" },
+    { text: "About", delay: "0.5s", path: "/about" },
+    { text: "Project", delay: "1s", path: "/projects" },
+    { text: "Skill", delay: "1.5s", path: "/skills" },
+  ];
 
   return (
     <>
@@ -51,7 +94,7 @@ const NavbarCompo = () => {
           <MenuIcon style={{ fontSize: isMobile || istablet ? 40 : 80 }} />
         </div>
       </Grid>
-      <Modal open={open} onClose={handleClose} closeAfterTransition >
+      <Modal open={open} closeAfterTransition>
         <Fade in={open}>
           <Box
             sx={{
@@ -60,19 +103,44 @@ const NavbarCompo = () => {
               left: "50%",
               transform: "translate(-50%, -50%)",
               width: "100%",
-              height: "auto",
+              height: "100%",
               bgcolor: "black",
               display: "flex",
               flexDirection: "column",
               justifyContent: "center",
               alignItems: "center",
               outline: "none",
+              animation: "slideIn 0.5s forwards",
             }}
           >
-            <h2>Home</h2>
-            <h2>About</h2>
-            <h2>Project</h2>
-            <h2>Skill</h2>
+            <Grid
+              onClick={handleClose}
+              position={"absolute"}
+              style={{
+                top: 10,
+                left: 20,
+                fontSize: 30,
+                cursor: isMobile || istablet ? "" : "pointer",
+              }}
+            >
+              X
+            </Grid>
+            {textItems.map((item, index) => (
+              <AnimatedText
+                className={"animated-text"}
+                key={index}
+                text={item.text}
+                animation="slideRightToLeft"
+                style={{
+                  cursor: isMobile || istablet ? "" : "pointer",
+                }}
+                delay={item.delay}
+                onClick={() => {
+                  navigate(item.path); // Use navigate to route to the specified path
+                  handleClose(); // Close modal after navigation
+                }}
+              />
+            ))}
           </Box>
         </Fade>
       </Modal>

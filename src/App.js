@@ -11,9 +11,9 @@ function App() {
   return (
     <>
 
+        <Router>
       <NavbarCompo/>
         <Follow/>
-        <Router>
 
           <Routes>
             <Route path="/" element={<Home />} />
