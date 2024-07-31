@@ -6,6 +6,7 @@ import {
   Modal,
   Fade,
   Typography,
+  Button,
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import { useNavigate } from "react-router-dom"; // Import useNavigate
@@ -27,7 +28,8 @@ const AnimatedText = ({
       color: "white",
       animation: `${animation} 2s ease-in-out forwards`,
       animationDelay: `${delay}`,
-      cursor: cursor, // Use cursor prop for cursor style
+      cursor: cursor,
+      fontFamily: "monospace",
     }}
     style={style} // Use style prop for additional inline styles
     onClick={onClick}
@@ -90,9 +92,9 @@ const NavbarCompo = () => {
           alignItems: "center",
         }}
       >
-        <div onClick={handleOpen}>
+        <Button color="inherit" onClick={handleOpen}>
           <MenuIcon style={{ fontSize: isMobile || istablet ? 40 : 80 }} />
-        </div>
+        </Button>
       </Grid>
       <Modal open={open} closeAfterTransition>
         <Fade in={open}>
