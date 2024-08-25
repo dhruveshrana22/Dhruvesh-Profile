@@ -8,8 +8,9 @@ const meta = {
 const introdata = {
   title: "I’m Dhruvesh Rana",
   animated: {
-    second: "I code cool websites",
     third: "I develop mobile apps",
+    second: "I code cool websites",
+    Forth: "I Work as a Quality Assurance",
   },
   description:
     "My name is Dhruvesh Rana, a skilled React Native and React.js developer based in NadiadI currently work at Groovy Web Tec Ltd, where I leverage my expertise to build robust and efficient applications.",

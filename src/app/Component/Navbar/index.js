@@ -58,7 +58,7 @@ const NavbarCompo = () => {
 
   return (
     <>
-      <Col style={{ position: 'fixed', display: 'flex', width: '100%', justifyContent: 'space-between', alignItems: 'center' }}>
+      <Col style={{ position: 'relative', display: 'flex', width: '100%', justifyContent: 'space-between', alignItems: 'center' }}>
         <Grid
           style={{
             width: isMobile || istablet ? 200 : 400,
@@ -71,10 +71,11 @@ const NavbarCompo = () => {
             top: isMobile || istablet ? 10 : 50,
           }}
         >
-          <h4
+          <h4 onClick={() => navigate("/")}
             style={{
               fontSize: isMobile || istablet ? 20 : 40,
               fontFamily: "monospace",
+              cursor: isMobile || istablet ? "" : 'pointer'
             }}
           >
             Dhruvesh Rana

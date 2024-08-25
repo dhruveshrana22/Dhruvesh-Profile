@@ -1,12 +1,13 @@
-import { Box, Grid, useMediaQuery } from "@mui/material";
+import { Box, Button, Grid, useMediaQuery } from "@mui/material";
 import React from "react";
 import Typewriter from "typewriter-effect";
 
 import NavbarCompo from "../../Component/Navbar";
 import { Images } from "../../../assets/ima";
 import DhruveshImage from '../../../assets/Images/Dhruvesh.jpg';
-import { Col, Typography } from "antd";
+import { Col, Flex, Row, Typography } from "antd";
 import { introdata } from "../../Utils/content_option";
+import { RobotFilled } from "@ant-design/icons";
 
 const Home = () => {
   const isMobile = useMediaQuery("(max-width:600px)");
@@ -17,7 +18,6 @@ const Home = () => {
       <Grid
         style={{
           height: '100vh',
-          top: isMobile || istablet ? "" : 150,
           display: "flex",
           justifyContent: 'center',
           alignItems: 'center',
@@ -30,8 +30,7 @@ const Home = () => {
           justifyContent: isDesktop ? "space-between" : "space-around",
           width: "80%",
           gap: 10,
-          top: 30
-
+          top: isMobile || istablet ? 150 : "",
         }}>
           <Grid width={isMobile || istablet ? "100%" : "50%"} style={{
             display: 'flex', flexDirection: 'column',
@@ -45,6 +44,7 @@ const Home = () => {
                     introdata.animated.first,
                     introdata.animated.second,
                     introdata.animated.third,
+                    introdata.animated.Forth,
                   ],
                   autoStart: true,
                   loop: true,
@@ -57,6 +57,12 @@ const Home = () => {
                 </Typography>
               </Col>
             </Col>
+            <Flex style={{ width: '100%', height: 100, alignItems: 'center', justifyContent: 'center' }}>
+              <Row style={{ width: '100%', gap: 20 }}>
+                <Button variant="outlined" style={{ fontSize: isMobile || istablet ? 10 : 15 }} >My Portfolio</Button>
+                <Button variant="contained" style={{ backgroundColor: 'whitesmoke', fontSize: isMobile || istablet ? 10 : 15, color: 'black' }}>Contect</Button>
+              </Row>
+            </Flex>
           </Grid>
           <Grid
             width={isMobile || istablet ? "100%" : "50%"}
@@ -115,7 +121,7 @@ const Home = () => {
                 },
               }}
             >
-              Hover Me
+              {isMobile || istablet ? "Click Me" : "Hover Me"}
             </div>
           </Grid>
 
