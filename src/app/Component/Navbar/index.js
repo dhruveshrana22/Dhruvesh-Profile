@@ -11,6 +11,7 @@ import {
 import MenuIcon from "@mui/icons-material/Menu";
 import { useNavigate } from "react-router-dom"; // Import useNavigate
 import { hover } from "@testing-library/user-event/dist/hover";
+import { Col } from "antd";
 
 const AnimatedText = ({
   text,
@@ -57,45 +58,37 @@ const NavbarCompo = () => {
 
   return (
     <>
-      <Grid
-        style={{
-          width: isMobile || istablet ? 200 : 400,
-          display: "flex",
-          alignItems: "center",
-          height: 50,
-          position: "absolute",
-          padding: isMobile || istablet ? 2 : 10,
-          left: isMobile || istablet ? 10 : 50,
-          top: isMobile || istablet ? 10 : 50,
-        }}
-      >
-        <h4
+      <Col style={{ position: 'fixed', display: 'flex', width: '100%', justifyContent: 'space-between', alignItems: 'center' }}>
+        <Grid
           style={{
-            fontSize: isMobile || istablet ? 20 : 40,
-            fontFamily: "monospace",
+            width: isMobile || istablet ? 200 : 400,
+            display: "flex",
+            alignItems: "center",
+            height: 50,
+            paddingLeft: "2%",
+            padding: isMobile || istablet ? 2 : 10,
+            left: isMobile || istablet ? 10 : 50,
+            top: isMobile || istablet ? 10 : 50,
           }}
         >
-          Dhruvesh Rana
-        </h4>
-      </Grid>
-      <Grid
-        style={{
-          display: "flex",
-          width: 100,
-          height: 50,
-          position: "absolute",
-          padding: isMobile || istablet ? 2 : 10,
-          right: isMobile || istablet ? 10 : 50,
-          top: isMobile || istablet ? 10 : 50,
-          textAlign: "end",
-          justifyContent: "end",
-          alignItems: "center",
-        }}
-      >
-        <Button color="inherit" onClick={handleOpen}>
-          <MenuIcon style={{ fontSize: isMobile || istablet ? 40 : 80 }} />
-        </Button>
-      </Grid>
+          <h4
+            style={{
+              fontSize: isMobile || istablet ? 20 : 40,
+              fontFamily: "monospace",
+            }}
+          >
+            Dhruvesh Rana
+          </h4>
+        </Grid>
+        <Grid
+          style={{
+          }}
+        >
+          <Button color="inherit" onClick={handleOpen}>
+            <MenuIcon style={{ fontSize: isMobile || istablet ? 40 : 80 }} />
+          </Button>
+        </Grid>
+      </Col>
       <Modal open={open} closeAfterTransition>
         <Fade in={open}>
           <Box

@@ -1,56 +1,126 @@
 import { Box, Grid, useMediaQuery } from "@mui/material";
 import React from "react";
+import Typewriter from "typewriter-effect";
+
 import NavbarCompo from "../../Component/Navbar";
+import { Images } from "../../../assets/ima";
+import DhruveshImage from '../../../assets/Images/Dhruvesh.jpg';
+import { Col, Typography } from "antd";
+import { introdata } from "../../Utils/content_option";
 
 const Home = () => {
   const isMobile = useMediaQuery("(max-width:600px)");
   const istablet = useMediaQuery("(max-width:768px)");
-  const isDesktop = useMediaQuery("(max-width:1440px)");
+  const isDesktop = useMediaQuery("(max-width:1300px)");
   return (
     <>
       <Grid
-        position={"relative"}
         style={{
-          backgroundColor: "red",
-          top: isMobile || istablet ? 100 : 150,
+          height: '100vh',
+          top: isMobile || istablet ? "" : 150,
           display: "flex",
-          flexDirection: isMobile || istablet ? "column-reverse" : "row",
-          justifyContent: "space-around",
+          justifyContent: 'center',
+          alignItems: 'center',
         }}
       >
-        <Grid width={"50%"} height={"50%"} bgcolor={"green"}>
-          <Grid style={{ position: "relative", width: "100%", height: "100%" }}>
-            <img
-              src="https://stimg.cardekho.com/images/carexteriorimages/930x620/Rolls-Royce/Spectre/11100/1705661590820/front-left-side-47.jpg"
-              alt="Rolls-Royce"
-              height={isMobile || istablet ? 500 : "100%"}
-              width={"100%"}
-              style={{ position: "relative", zIndex: 0 }}
-            />
-          </Grid>
-        </Grid>
-        <Grid width={"50%"} height={"50%"}>
-          <div style={{ position: "relative", width: "100%", height: "100%" }}>
-            <div
-              style={{
-                position: "absolute",
-                width: "100%",
-                height: "100%",
-                background:
-                  "linear-gradient(to bottom, rgba(0, 0.5, 0.5, 0.5), rgba(255, 255, 255, 0.5))", // Black to white gradient
 
-                zIndex: 1, // Ensure the overlay is above the image
+        <Col style={{
+          display: "flex",
+          flexDirection: isMobile || istablet ? "column-reverse" : "row",
+          justifyContent: isDesktop ? "space-between" : "space-around",
+          width: "80%",
+          gap: 10,
+          top: 30
+
+        }}>
+          <Grid width={isMobile || istablet ? "100%" : "50%"} style={{
+            display: 'flex', flexDirection: 'column',
+            justifyContent: 'flex-start', alignItems: 'flex-start'
+          }} >
+            <Col style={{ padding: 10 }}>
+              <h1 style={{ color: 'whitesmoke', fontSize: isMobile || istablet ? 20 : 45 }}>I'm Dhruvesh Rana</h1>
+              <h2 style={{ color: 'whitesmoke', fontSize: isMobile || istablet ? 15 : 25 }}><Typewriter
+                options={{
+                  strings: [
+                    introdata.animated.first,
+                    introdata.animated.second,
+                    introdata.animated.third,
+                  ],
+                  autoStart: true,
+                  loop: true,
+                  deleteSpeed: 10,
+                }}
+              /></h2>
+              <Col xs={24}>
+                <Typography style={{ fontFamily: 'monospace', fontSize: isMobile || istablet ? 15 : 18, color: 'whitesmoke' }}>
+                  {introdata.description}
+                </Typography>
+              </Col>
+            </Col>
+          </Grid>
+          <Grid
+            width={isMobile || istablet ? "100%" : "50%"}
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              justifyContent: "flex-start",
+              alignItems: "center",
+              position: "relative", // Position the Grid relative to contain absolute elements
+            }}
+          >
+            <img
+              src={DhruveshImage}
+              alt="Rolls-Royce"
+              style={{
+                zIndex: 1, // Ensure image is above the background but below the text
+                objectFit: "cover",
+                height: "80%",
+                width: isMobile || istablet ? "100%" : "60%",
+                boxShadow: "0px 0px 30px rgba(255, 255, 255, 0.5)", // White shadow on all sides
+                filter: "grayscale(100%) blur(2px) sepia(0.4) brightness(1.1)", // Black-and-white filter with blur and warmth
+                transition: "filter 0.3s ease-in-out", // Smooth transition
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.filter = "grayscale(100%) blur(0px) sepia(0.4) brightness(1.1)"; // Remove blur on hover, keep black-and-white effect
+                document.getElementById("hoverText").style.opacity = 0; // Hide text on hover
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.filter = "grayscale(100%) blur(2px) sepia(0.4) brightness(1.1)"; // Reapply blur when not hovering
+                document.getElementById("hoverText").style.opacity = 1; // Show text when not hovering
               }}
             />
-            <img
-              src="https://stimg.cardekho.com/images/carexteriorimages/930x620/Rolls-Royce/Spectre/11100/1705661590820/front-left-side-47.jpg"
-              alt="Rolls-Royce"
-              height={isMobile || istablet ? 500 : "100%"}
-              width={"100%"}
-              style={{ position: "relative", zIndex: 0 }}
-            />
-          </div>
-        </Grid>
+
+            <div
+              id="hoverText"
+              style={{
+                position: "absolute",
+                top: "50%", // Center the text vertically
+                left: "50%", // Center the text horizontally
+                transform: "translate(-50%, -50%)", // Centering correction
+                zIndex: 2, // Ensure text is above the image
+                color: "red",
+                fontSize: "24px",
+                fontWeight: "bold",
+                opacity: 1, // Initially visible
+                pointerEvents: "none", // Ensure text doesn't block hover events
+              }}
+              animate={{
+                y: [0, -20, 0], // Bounce animation
+              }}
+              transition={{
+                y: {
+                  duration: 1, // Duration of each bounce cycle
+                  repeat: Infinity, // Infinite repeating
+                  repeatType: "loop", // Looping animation
+                },
+              }}
+            >
+              Hover Me
+            </div>
+          </Grid>
+
+
+        </Col>
       </Grid>
     </>
   );

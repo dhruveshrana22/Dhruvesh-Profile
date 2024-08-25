@@ -13,7 +13,7 @@ function App() {
       <Router>
         <NavbarCompo />
 
-        <Follow />
+        {/* <Follow /> */}
 
         <Routes>
           <Route path="/" element={<Home />} />
