@@ -51,9 +51,9 @@ const NavbarCompo = () => {
 
   const textItems = [
     { text: "Home", delay: "0s", path: "/" },
-    { text: "About", delay: "0.5s", path: "/about" },
-    { text: "Project", delay: "1s", path: "/projects" },
-    { text: "Skill", delay: "1.5s", path: "/skills" },
+    { text: "About", delay: "0.5s", path: "/About" },
+    { text: "Portfolio", delay: "1s", path: "/Portfolio" },
+    { text: "Contact", delay: "1.5s", path: "/Contect" },
   ];
 
   return (

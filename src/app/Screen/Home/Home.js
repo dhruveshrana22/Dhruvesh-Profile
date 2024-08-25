@@ -8,11 +8,14 @@ import DhruveshImage from '../../../assets/Images/Dhruvesh.jpg';
 import { Col, Flex, Row, Typography } from "antd";
 import { introdata } from "../../Utils/content_option";
 import { RobotFilled } from "@ant-design/icons";
+import { useNavigate } from "react-router-dom";
 
 const Home = () => {
   const isMobile = useMediaQuery("(max-width:600px)");
   const istablet = useMediaQuery("(max-width:768px)");
   const isDesktop = useMediaQuery("(max-width:1300px)");
+  const navigate = useNavigate(); // Use useNavigate instead of useNavigation
+
   return (
     <>
       <Grid
@@ -59,8 +62,12 @@ const Home = () => {
             </Col>
             <Flex style={{ width: '100%', height: 100, alignItems: 'center', justifyContent: 'center' }}>
               <Row style={{ width: '100%', gap: 20 }}>
-                <Button variant="outlined" style={{ fontSize: isMobile || istablet ? 10 : 15 }} >My Portfolio</Button>
-                <Button variant="contained" style={{ backgroundColor: 'whitesmoke', fontSize: isMobile || istablet ? 10 : 15, color: 'black' }}>Contect</Button>
+                <Button variant="outlined" style={{ fontSize: isMobile || istablet ? 10 : 15, color: "whitesmoke" }}
+                  onClick={() => { navigate('/Portfolio') }}
+                >My Portfolio</Button>
+                <Button variant="contained"
+                  onClick={() => { navigate('/Contect') }}
+                  style={{ backgroundColor: 'whitesmoke', fontSize: isMobile || istablet ? 10 : 15, color: 'black' }}>Contect</Button>
               </Row>
             </Flex>
           </Grid>
@@ -107,8 +114,8 @@ const Home = () => {
                 color: "red",
                 fontSize: "24px",
                 fontWeight: "bold",
-                opacity: 1, // Initially visible
-                pointerEvents: "none", // Ensure text doesn't block hover events
+                opacity: 1,
+                pointerEvents: "none",
               }}
               animate={{
                 y: [0, -20, 0], // Bounce animation

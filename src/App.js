@@ -6,6 +6,9 @@ import { Grid } from "@mui/material";
 import "./App.css";
 import NavbarCompo from "./app/Component/Navbar";
 import Follow from "./app/Component/Follow";
+import About from "./app/Screen/About";
+import Contect from "./app/Screen/Contect/Index";
+import Portfolio from "./app/Screen/Portfolio";
 
 function App() {
   return (
@@ -17,6 +20,9 @@ function App() {
 
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/About" element={<About />} />
+          <Route path="/Contect" element={<Contect />} />
+          <Route path="/Portfolio" element={<Portfolio />} />
         </Routes>
       </Router>
     </>

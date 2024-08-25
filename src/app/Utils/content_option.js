@@ -13,7 +13,7 @@ const introdata = {
     Forth: "I Work as a Quality Assurance",
   },
   description:
-    "My name is Dhruvesh Rana, a skilled React Native and React.js developer based in NadiadI currently work at Groovy Web Tec Ltd, where I leverage my expertise to build robust and efficient applications.",
+    "My name is Dhruvesh Rana, a skilled React Native and React.js developer based in Nadiad. I currently work at Groovy Web Tec Ltd, where I leverage my expertise to build robust and efficient applications.",
   your_img_url: "https://images.unsplash.com/photo-1514790193030-c89d266d5a9d",
 };
 

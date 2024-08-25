@@ -5,13 +5,19 @@ const Contect = () => {
     const isMobile = useMediaQuery('(max-width:600px)'); // Adjust the breakpoint as needed
 
     return (
-        <Grid container>
-            <Box>
-                <Grid >
-                    Dhruvesh
-                </Grid>
-            </Box>
-        </Grid>
+        <>
+            <Grid
+                style={{
+                    height: '100vh',
+                    display: "flex",
+                    justifyContent: 'center',
+                    alignItems: 'center',
+                }}
+            >
+
+                Skill
+            </Grid>
+        </>
     );
 };
 
