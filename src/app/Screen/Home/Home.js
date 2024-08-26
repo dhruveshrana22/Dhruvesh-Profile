@@ -20,7 +20,6 @@ const Home = () => {
     <>
       <Grid
         style={{
-          height: '100vh',
           display: "flex",
           justifyContent: 'center',
           alignItems: 'center',
@@ -33,7 +32,7 @@ const Home = () => {
           justifyContent: isDesktop ? "space-between" : "space-around",
           width: "80%",
           gap: 10,
-          top: isMobile || istablet ? 120 : "",
+          top: isMobile || istablet ? 50 : "",
         }}>
           <Grid width={isMobile || istablet ? "100%" : "50%"} style={{
             display: 'flex', flexDirection: 'column',

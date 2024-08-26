@@ -12,9 +12,10 @@ const introdata = {
     second: "I code cool websites",
     Forth: "I Work as a Quality Assurance",
   },
-  description:
-    "My name is Dhruvesh Rana, a skilled React Native and React.js developer based in Nadiad. I currently work at Groovy Web Tec Ltd, where I leverage my expertise to build robust and efficient applications.",
+  description: "I am a highly skilled and dedicated software developer specializing in React Native and React.js, currently employed at Groovy Web Tec Ltd. in Nadiad. With a strong foundation in front-end development and a passion for creating intuitive, user-friendly applications, I bring a wealth of experience and expertise to every project I undertake.",
+  // "I am a highly skilled and dedicated software developer specializing in React Native and React.js, currently employed at Groovy Web Tec Ltd. in Nadiad. With a strong foundation in front-end development and a passion for creating intuitive, user-friendly applications, I bring a wealth of experience and expertise to every project I undertake.At Groovy Web Tec Ltd., I leverage my deep understanding of modern web and mobile technologies to design and develop robust, scalable applications that meet the highest standards of performance and reliability. My work is characterized by a meticulous attention to detail, a commitment to best practices, and a relentless pursuit of excellence.",
   your_img_url: "https://images.unsplash.com/photo-1514790193030-c89d266d5a9d",
+  description2: "I am a highly skilled and dedicated software developer specializing in React Native and React.js, currently employed at Groovy Web Tec Ltd. in Nadiad. With a strong foundation in front-end development and a passion for creating intuitive, user-friendly applications, I bring a wealth of experience and expertise to every project I undertake. At Groovy Web Tec Ltd., I leverage my deep understanding of modern web and mobile technologies to design and develop robust, scalable applications that meet the highest standards of performance and reliability. My work is characterized by a meticulous attention to detail, a commitment to best practices, and a relentless pursuit of excellence"
 };
 
 const dataabout = {
