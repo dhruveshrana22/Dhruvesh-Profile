@@ -6,7 +6,7 @@ import NavbarCompo from "../../Component/Navbar";
 import { Images } from "../../../assets/ima";
 import DhruveshImage from '../../../assets/Images/Dhruvesh.jpg';
 import { Col, Flex, Row, Typography } from "antd";
-import { introdata } from "../../Utils/content_option";
+import { introdata, services, skills } from "../../Utils/content_option";
 import { RobotFilled } from "@ant-design/icons";
 import Hader from "../../Component/Hader";
 import { DeviceWidth } from "../../Utils/Theme";
@@ -33,10 +33,14 @@ const About = () => {
                         <Hader title="About me" BottomLine />
                     </Col>
                     <Col >
-                        <Content content description={introdata.description2} />
+                        <Content title={"Skills"} Skill={skills} />
                     </Col>
                     <Col >
-                        <Content content description={introdata.description2} />
+                        <Content content title={"abit about my self"} description={introdata.description2} />
+                    </Col>
+
+                    <Col >
+                        <Content title={"Services"} services={services} />
                     </Col>
                 </Col>
             </Grid>
