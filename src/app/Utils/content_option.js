@@ -72,17 +72,17 @@ const services = [
   {
     title: "Mobile Apps",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at nisl euismod urna bibendum sollicitudin.",
-  },
-  {
-    title: "Testing (Manual)",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at nisl euismod urna bibendum sollicitudin.",
+      "I specialize in creating highly effective and user-centric mobile applications. My focus is on delivering seamless, responsive, and engaging apps that enhance user experience. With a deep understanding of React Native, I develop apps that are both functional and aesthetically pleasing, tailored to meet the unique needs of each client.",
   },
   {
     title: "WebSite Design",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at nisl euismod urna bibendum sollicitudin.",
+      "As a skilled React developer, I create dynamic, responsive, and high-performance web applications. My expertise lies in building user-friendly interfaces that are both visually appealing and highly functional. I am dedicated to delivering tailored solutions that meet the specific needs of each project, ensuring an optimal user experience across all platforms.",
+  },
+  {
+    title: "Testing (Manual)",
+    description:
+      "I excel in manual testing, ensuring that applications are thoroughly tested for functionality, usability, and performance. My approach is meticulous and detail-oriented, focusing on identifying and addressing potential issues before they impact the end user. By rigorously testing every aspect of the application, I ensure a high level of quality and reliability in the final product.",
   },
 ];
 

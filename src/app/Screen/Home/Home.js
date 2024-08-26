@@ -9,6 +9,7 @@ import { Col, Flex, Row, Typography } from "antd";
 import { introdata } from "../../Utils/content_option";
 import { RobotFilled } from "@ant-design/icons";
 import { useNavigate } from "react-router-dom";
+import { Slide } from "react-awesome-reveal";
 
 const Home = () => {
   const isMobile = useMediaQuery("(max-width:600px)");
@@ -18,7 +19,7 @@ const Home = () => {
 
   return (
     <>
-      <Grid
+      <Slide direction="down" duration={1000}
         style={{
           display: "flex",
           justifyContent: 'center',
@@ -132,8 +133,9 @@ const Home = () => {
           </Grid>
 
 
+
         </Col>
-      </Grid>
+      </Slide>
     </>
   );
 };

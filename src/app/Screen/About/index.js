@@ -1,16 +1,11 @@
 import { Box, Button, Grid, useMediaQuery } from "@mui/material";
 import React from "react";
-import Typewriter from "typewriter-effect";
-
-import NavbarCompo from "../../Component/Navbar";
-import { Images } from "../../../assets/ima";
-import DhruveshImage from '../../../assets/Images/Dhruvesh.jpg';
-import { Col, Flex, Row, Typography } from "antd";
+import { Col, Typography } from "antd";
 import { introdata, services, skills } from "../../Utils/content_option";
-import { RobotFilled } from "@ant-design/icons";
 import Hader from "../../Component/Hader";
-import { DeviceWidth } from "../../Utils/Theme";
 import Content from "../../Component/Content";
+import { Link as ScrollLink, Element } from 'react-scroll';
+import { Slide } from 'react-awesome-reveal';
 
 const About = () => {
     const isMobile = useMediaQuery("(max-width:600px)");
@@ -29,19 +24,29 @@ const About = () => {
                 <Col style={{
                     width: isMobile || istablet ? '90%' : '70%',
                 }}>
-                    <Col >
-                        <Hader title="About me" BottomLine />
-                    </Col>
-                    <Col >
-                        <Content title={"Skills"} Skill={skills} />
-                    </Col>
-                    <Col >
-                        <Content content title={"abit about my self"} description={introdata.description2} />
-                    </Col>
+                    <Slide direction="left" triggerOnce>
+                        <Element name="about-me">
+                            <Hader title="About me" BottomLine />
+                        </Element>
+                    </Slide>
 
-                    <Col >
-                        <Content title={"Services"} services={services} />
-                    </Col>
+                    <Slide direction="right" triggerOnce duration={2000}>
+                        <Element name="skills">
+                            <Content title={"Skills"} Skill={skills} />
+                        </Element>
+                    </Slide>
+
+                    <Slide direction="left" triggerOnce duration={2000}>
+                        <Element name="about-myself">
+                            <Content content title={"abit about my self"} description={introdata.description2} />
+                        </Element>
+                    </Slide>
+
+                    <Slide direction="right" triggerOnce duration={2000}>
+                        <Element name="services">
+                            <Content title={"Services"} services={services} />
+                        </Element>
+                    </Slide>
                 </Col>
             </Grid>
         </>
