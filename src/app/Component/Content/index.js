@@ -1,7 +1,8 @@
 import { Box, Button, Grid, Input, Slider, TextField, useMediaQuery } from "@mui/material";
 import React, { useEffect, useState } from "react";
-import { Col, Flex, Row, Typography } from "antd";
+import { Col, Flex, Image, Row, Typography } from "antd";
 import { BaseColor } from "../../Utils/Theme";
+import { isEmpty } from "lodash";
 
 const AnimatedSlider = ({ value }) => {
     const [sliderValue, setSliderValue] = useState(0);
@@ -39,7 +40,7 @@ const AnimatedSlider = ({ value }) => {
     );
 };
 const Content = (props) => {
-    const { content, description, title, Skill, services, Contact } = props;
+    const { content, description, title, Skill, services, Contact, Imagecompo } = props;
     const isMobile = useMediaQuery("(max-width:600px)");
     const istablet = useMediaQuery("(max-width:768px)");
     const isDesktop = useMediaQuery("(max-width:1300px)");
@@ -103,7 +104,7 @@ const Content = (props) => {
                 <Col style={{
                     width: isMobile || istablet ? '100%' : Contact ? '40%' : '50%',
                 }}>
-                    <Typography.Title italic={Contact ? false : true} level={1} style={{
+                    {!Imagecompo && (<Typography.Title italic={Contact ? false : true} level={1} style={{
                         color: BaseColor.whiteSmoky.color,
                         fontFamily: Contact ? "sans-serif" : "monospace",
                         fontSize: isMobile || istablet ? 18 : 25,
@@ -111,7 +112,7 @@ const Content = (props) => {
                         // fontSize: isMobile || istablet ? 30 : 60,
                     }}>
                         {title}
-                    </Typography.Title>
+                    </Typography.Title>)}
                     {Contact && (
                         <Grid style={{ gap: 20, display: 'flex', flexDirection: 'column' }}>
                             <Row style={{ alignItems: 'center', fontSize: 20, }}>
@@ -127,6 +128,12 @@ const Content = (props) => {
                         </Grid>
 
 
+                    )}
+
+                    {Imagecompo && (
+                        <>
+                            <Image src={Imagecompo?.Image} alt={"data "} height={500} style={{ objectFit: "cover", }} />
+                        </>
                     )}
 
                 </Col>
@@ -194,6 +201,116 @@ const Content = (props) => {
 
                         </Grid>
                     ))}
+
+                </Col>)}
+                {Imagecompo && (<Col style={{
+                    width: isMobile || istablet ? '100%' : '50%',
+                }}>
+
+                    <Grid style={{ marginBottom: 30 }} >
+                        <Grid style={{ borderBottom: '0.5px solid gray', }}>
+                            <Typography.Title
+                                level={1}
+                                style={{
+                                    color: BaseColor.whiteSmoky.color,
+                                    fontFamily: "monospace",
+                                    fontSize: isMobile || istablet ? 18 : 25,
+                                }}
+                            >
+                                {Imagecompo?.title2}
+                            </Typography.Title>
+                        </Grid>
+                        <Col>
+                            <Typography.Title level={3} style={{
+                                color: BaseColor.whiteSmoky.color,
+                                fontSize: isMobile || istablet ? 15 : 18,
+                                lineHeight: 1.5
+
+                                // fontSize: isMobile || istablet ? 30 : 60,
+                            }}>
+                                {Imagecompo?.description2}
+                            </Typography.Title>
+                        </Col>
+
+                    </Grid>
+                    <Grid style={{ marginBottom: 30, borderBottom: '0.5px solid gray', }} >
+
+                        <Row style={{ alignItems: 'center' }}>
+                            <Typography.Title
+                                level={1}
+                                style={{
+                                    color: BaseColor.whiteSmoky.color,
+                                    fontFamily: "monospace",
+                                    fontSize: isMobile || istablet ? 18 : 25,
+                                }}
+                            >
+                                {Imagecompo?.title3}:
+                            </Typography.Title>
+                            <Typography.Title level={3} style={{
+                                color: BaseColor.whiteSmoky.color,
+                                fontSize: isMobile || istablet ? 15 : 18,
+                                lineHeight: 1.5,
+                                marginLeft: 5
+
+                                // fontSize: isMobile || istablet ? 30 : 60,
+                            }}>
+                                {Imagecompo?.Role}
+                            </Typography.Title>
+                        </Row>
+                        <Row style={{ alignItems: 'center' }}>
+                            <Typography.Title
+                                level={1}
+                                style={{
+                                    color: BaseColor.whiteSmoky.color,
+                                    fontFamily: "monospace",
+                                    fontSize: isMobile || istablet ? 18 : 25,
+                                }}
+                            >
+                                {Imagecompo?.title4}:
+                            </Typography.Title>
+                            <Typography.Title level={3} style={{
+                                color: BaseColor.whiteSmoky.color,
+                                fontSize: isMobile || istablet ? 15 : 18,
+                                lineHeight: 1.5,
+                                marginLeft: 5
+
+                                // fontSize: isMobile || istablet ? 30 : 60,
+                            }}>
+                                {Imagecompo?.Technologies}
+                            </Typography.Title>
+                        </Row>
+
+                    </Grid>
+
+                    {!isEmpty(Imagecompo?.title5) && (<Grid style={{ marginBottom: 30 }} >
+                        <Grid style={{ borderBottom: '0.5px solid gray', }}>
+                            <Typography.Title
+                                level={1}
+                                style={{
+                                    color: BaseColor.whiteSmoky.color,
+                                    fontFamily: "monospace",
+                                    fontSize: isMobile || istablet ? 18 : 25,
+                                }}
+                            >
+                                {Imagecompo?.title5}:
+                            </Typography.Title>
+                        </Grid>
+                        <Col>
+                            <Typography.Title level={3} style={{
+                                color: BaseColor.whiteSmoky.color,
+                                fontSize: isMobile || istablet ? 15 : 18,
+                                lineHeight: 1.5
+
+                                // fontSize: isMobile || istablet ? 30 : 60,
+                            }}>
+                                {Imagecompo?.OtherDetail}
+
+                            </Typography.Title>
+                        </Col>
+
+                    </Grid>)}
+
+
 
                 </Col>)}
                 {Contact && (

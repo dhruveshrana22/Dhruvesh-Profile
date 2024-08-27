@@ -64,7 +64,7 @@ const Home = () => {
               <Row style={{ width: '100%', gap: 20 }}>
                 <Button variant="outlined" style={{ fontSize: isMobile || istablet ? 10 : 15, color: "whitesmoke" }}
                   onClick={() => { navigate('/Portfolio') }}
-                >My Portfolio</Button>
+                >My Projects</Button>
                 <Button variant="contained"
                   onClick={() => { navigate('/Contect') }}
                   style={{ backgroundColor: 'whitesmoke', fontSize: isMobile || istablet ? 10 : 15, color: 'black' }}>Contect</Button>

@@ -52,7 +52,7 @@ const NavbarCompo = () => {
   const textItems = [
     { text: "Home", delay: "0s", path: "/" },
     { text: "About", delay: "0.5s", path: "/About" },
-    { text: "Portfolio", delay: "1s", path: "/Portfolio" },
+    { text: "Projects", delay: "1s", path: "/Portfolio" },
     { text: "Contact", delay: "1.5s", path: "/Contect" },
   ];
 
@@ -91,54 +91,54 @@ const NavbarCompo = () => {
         </Grid>
       </Col>
       <Modal open={open} closeAfterTransition>
-        <Fade in={open}>
-          <Box
-            sx={{
-              position: "absolute",
-              top: "50%",
-              left: "50%",
-              transform: "translate(-50%, -50%)",
-              width: "100%",
-              height: "100%",
-              bgcolor: "black",
-              display: "flex",
-              flexDirection: "column",
-              justifyContent: "center",
-              alignItems: "center",
-              outline: "none",
-              animation: "slideIn 0.5s forwards",
+        {/* <Fade in={open}> */}
+        <Box
+          sx={{
+            position: "absolute",
+            top: "50%",
+            left: "50%",
+            transform: "translate(-50%, -50%)",
+            width: "100%",
+            height: "100%",
+            bgcolor: "black",
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "center",
+            alignItems: "center",
+            outline: "none",
+            animation: "slideIn 0.5s forwards",
+          }}
+        >
+          <Grid
+            onClick={handleClose}
+            position={"absolute"}
+            style={{
+              top: 10,
+              left: 20,
+              fontSize: 30,
+              cursor: isMobile || istablet ? "" : "pointer",
             }}
           >
-            <Grid
-              onClick={handleClose}
-              position={"absolute"}
+            X
+          </Grid>
+          {textItems.map((item, index) => (
+            <AnimatedText
+              className={"animated-text"}
+              key={index}
+              text={item.text}
+              animation="slideRightToLeft"
               style={{
-                top: 10,
-                left: 20,
-                fontSize: 30,
                 cursor: isMobile || istablet ? "" : "pointer",
               }}
-            >
-              X
-            </Grid>
-            {textItems.map((item, index) => (
-              <AnimatedText
-                className={"animated-text"}
-                key={index}
-                text={item.text}
-                animation="slideRightToLeft"
-                style={{
-                  cursor: isMobile || istablet ? "" : "pointer",
-                }}
-                delay={item.delay}
-                onClick={() => {
-                  navigate(item.path); // Use navigate to route to the specified path
-                  handleClose(); // Close modal after navigation
-                }}
-              />
-            ))}
-          </Box>
-        </Fade>
+              delay={item.delay}
+              onClick={() => {
+                navigate(item.path); // Use navigate to route to the specified path
+                handleClose(); // Close modal after navigation
+              }}
+            />
+          ))}
+        </Box>
+        {/* </Fade> */}
       </Modal>
     </>
   );

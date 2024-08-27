@@ -1,7 +1,8 @@
 import { Grid, useMediaQuery } from "@mui/material";
-import { Button, Image } from "antd";
+import { Button, Flex, Image } from "antd";
 import React, { useState, useRef } from "react";
 import { motion, AnimatePresence } from 'framer-motion';
+import { useNavigate } from "react-router-dom";
 
 const Card = (props) => {
     const isMobile = useMediaQuery("(max-width:600px)");
@@ -10,7 +11,7 @@ const Card = (props) => {
     const { data } = props;
     const [isHovered, setIsHovered] = useState(false);
     const timeoutRef = useRef(null);
-
+    const navigate = useNavigate();
     const handleMouseEnter = () => {
         if (timeoutRef.current) {
             clearTimeout(timeoutRef.current);
@@ -27,8 +28,8 @@ const Card = (props) => {
     return (
         <Grid
             style={{
-                height: isMobile || istablet ? 250 : 350,
-                width: isMobile || istablet ? 'auto' : 350,
+                height: isMobile || istablet ? 250 : 300,
+                width: isMobile || istablet ? 'auto' : 300,
                 position: 'relative'
             }}
         >
@@ -44,8 +45,8 @@ const Card = (props) => {
                     src={data?.Image}
                     alt={data?.title}
                     style={{
-                        width: isMobile || istablet ? 250 : 350,
-                        height: isMobile || istablet ? 250 : 350,
+                        width: isMobile || istablet ? 250 : 300,
+                        height: isMobile || istablet ? 250 : 300,
                         objectFit: 'cover',
                         // filter: 'grayscale(100%) sepia(0.4) brightness(1.1)',
                         transition: 'filter 0.3s ease, box-shadow 0.3s ease',
@@ -66,20 +67,19 @@ const Card = (props) => {
                                     padding: 10,
                                     top: 0,
                                     left: 0,
-                                    width: isMobile || istablet ? 250 : 350,
-                                    height: isMobile || istablet ? 250 : 350,
+                                    width: isMobile || istablet ? 250 : 300,
+                                    height: isMobile || istablet ? 250 : 300,
                                     display: 'flex',
                                     backgroundColor: 'rgba(0, 0, 0, 0.5)',
                                     color: 'white',
-                                    padding: 20,
                                     boxSizing: 'border-box',
                                     textAlign: 'center',
                                     zIndex: 1,
                                     flexWrap: 'wrap',
                                 }}
                             >
-                                <>
-                                    <h1 style={{ fontSize: isMobile || istablet ? 15 : 25 }}>{data?.title}</h1>
+                                <Flex style={{ flexDirection: 'column' }}>
+                                    <h1 style={{ fontSize: isMobile || istablet ? 15 : 20 }}>{data?.title}</h1>
                                     <p
                                         style={{
                                             width: '100%',
@@ -87,14 +87,14 @@ const Card = (props) => {
                                             overflowWrap: 'break-word',
                                             padding: '10px',
                                             boxSizing: 'border-box',
-                                            fontSize: isMobile || istablet ? 12 : 18
+                                            fontSize: isMobile || istablet ? 12 : 15
                                         }}
                                     >
                                         {data?.description}
                                     </p>
-                                    <Button onClick={() => { alert("click on Image") }} style={{ width: '100%', backgroundColor: 'rgba(0, 0, 0, 0.5)', color: 'whitesmoke' }}>Detail</Button>
+                                    <Button onClick={() => { navigate('/DetailScreen', { state: { id: data?.id } }) }} style={{ width: '100%', backgroundColor: 'rgba(0, 0, 0, 0.5)', color: 'whitesmoke' }}>Detail</Button>
 
-                                </>
+                                </Flex>
                             </motion.div>
                         </>
                     )}

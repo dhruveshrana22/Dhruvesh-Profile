@@ -9,6 +9,8 @@ import { Col, Flex, Row, Typography } from "antd";
 import { data, introdata } from "../../Utils/content_option";
 import { RobotFilled } from "@ant-design/icons";
 import Card from "../../Component/Card/Index";
+import Hader from "../../Component/Hader";
+import { Slide } from "react-awesome-reveal";
 
 const Portfolio = () => {
     const isMobile = useMediaQuery("(max-width:600px)");
@@ -19,24 +21,34 @@ const Portfolio = () => {
             <Grid
                 style={{
                     display: "flex",
+                    flexDirection: 'column',
                     justifyContent: 'center',
                     alignItems: 'center',
                 }}
             >
-
-                <Grid style={{
-                    gap: 50,
-                    display: 'flex',
-                    padding: 20,
-                    width: isMobile || istablet ? "100%" : "80%",
-                    flexWrap: 'wrap',
-                    alignItems: 'center',
-                    justifyContent: "space-evenly"
+                <Col style={{
+                    width: isMobile || istablet ? '90%' : '70%',
                 }}>
-                    {data.map((item, index) => (
-                        <Card key={index} data={item} />
-                    ))}
-                </Grid>
+                    <Slide direction="right" duration={2000}>
+                        <Hader title={"Projects"} BottomLine />
+                    </Slide>
+
+                    <Slide duration={2500}>
+                        <Grid style={{
+                            gap: 50,
+                            display: 'flex',
+                            padding: 20,
+                            width: "100%",
+                            flexWrap: 'wrap',
+                            alignItems: 'center',
+                            justifyContent: "space-evenly"
+                        }}>
+                            {data.map((item, index) => (
+                                <Card key={index} data={item} />
+                            ))}
+                        </Grid>
+                    </Slide>
+                </Col>
 
             </Grid>
         </>

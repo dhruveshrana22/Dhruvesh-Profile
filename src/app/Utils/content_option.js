@@ -1,5 +1,6 @@
 import Dhruvesh from '../../assets/Images/Dhruvesh.jpg'
 import Reanlo from '../../assets/Images/Reanlo.jpg'
+import Vypar from '../../assets/Images/Vyapar.png'
 
 
 const logotext = "Dhruvesh Rana";
@@ -30,40 +31,40 @@ const dataabout = {
 
 const data = [
   {
+    id: 1,
     Image: Reanlo,
-    title: "Reanlo",
-    description: 'Reanlo is a cutting-edge book management application designed to enhance your reading experience and streamline your book collection management.'
+    title: "Reanlo For Readers ",
+    description: 'Reanlo is a cutting-edge book management application designed to enhance your reading experience and streamline your book collection management.',
+    title2: 'About App',
+    description2: 'Reanlo is a mobile application similar to Instagram but designed specifically for book enthusiasts. Users can share book reviews, follow other readers, and keep track of their reading progress. The app provides a platform for users to engage with book-related content and connect with like-minded individuals.',
+
+    title3: 'Role',
+    Role: "Junior Developer",
+    title4: 'Technologies',
+
+    Technologies: " React Native, Redux, REST API",
+    title5: 'OtherDetail',
+    OtherDetail: "I worked on this project as a junior developer",
+
   },
   {
-    Image: Dhruvesh,
-    title: "Dhruvesh Rana",
-    description: 'lorem25aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaassssssssssssssssssssssssssss'
+    id: 2,
+    Image: Vypar,
+    title: "Business Maintenance",
+    description: 'Business Maintenance is an intuitive business management application designed to streamline your operations. With Vyapar, you can effortlessly manage your inventory, dealers, and customer relationships all in one place.',
+    title2: 'About App',
+    description2: 'This web application is designed for businesses to manage their billing, customer, and dealer information efficiently. Users can add new bills, manage customer and dealer information, and create bills by adding products. The application streamlines business operations by storing all customer data securely in a database and providing a user-friendly interface for daily tasks.',
+    title3: 'Role',
+
+    Role: "Sole Developer",
+    title4: 'Technologies',
+
+    Technologies: "React, Redux, Firebase",
+    title5: 'OtherDetail',
+    OtherDetail: "I worked on this project as a Solo developer",
   },
-  {
-    Image: Dhruvesh,
-    title: "Dhruvesh Rana",
-    description: 'lorem25aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaassssssssssssssssssssssssssss'
-  },
-  {
-    Image: Dhruvesh,
-    title: "Dhruvesh Rana",
-    description: 'lorem25aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaassssssssssssssssssssssssssss'
-  },
-  {
-    Image: Dhruvesh,
-    title: "Dhruvesh Rana",
-    description: 'lorem25aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaassssssssssssssssssssssssssss'
-  },
-  {
-    Image: Dhruvesh,
-    title: "Dhruvesh Rana",
-    description: 'lorem25aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaassssssssssssssssssssssssssss'
-  },
-  {
-    Image: Dhruvesh,
-    title: "Dhruvesh Rana",
-    description: 'lorem25aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaassssssssssssssssssssssssssss'
-  }
+
+
 ]
 
 const skills = [
@@ -90,6 +91,10 @@ const skills = [
   {
     name: "Manual Testing",
     value: 80,
+  },
+  {
+    name: "Firebase",
+    value: 75,
   },
 ];
 
