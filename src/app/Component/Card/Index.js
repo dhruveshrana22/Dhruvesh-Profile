@@ -56,7 +56,6 @@ const Card = (props) => {
                 <AnimatePresence>
                     {isHovered && (
                         <>
-                            <Button onClick={() => { alert("click on Image") }} style={{ width: '100%', backgroundColor: 'rgba(0, 0, 0, 0.5)', color: 'whitesmoke' }}>Detail</Button>
                             <motion.div
                                 initial={{ opacity: 0, y: -50, scale: 0.5 }}
                                 animate={{ opacity: 1, y: 0, scale: 1 }}
@@ -80,7 +79,7 @@ const Card = (props) => {
                                 }}
                             >
                                 <>
-                                    <h1>{data?.title}</h1>
+                                    <h1 style={{ fontSize: isMobile || istablet ? 15 : 25 }}>{data?.title}</h1>
                                     <p
                                         style={{
                                             width: '100%',
@@ -88,10 +87,13 @@ const Card = (props) => {
                                             overflowWrap: 'break-word',
                                             padding: '10px',
                                             boxSizing: 'border-box',
+                                            fontSize: isMobile || istablet ? 12 : 18
                                         }}
                                     >
                                         {data?.description}
                                     </p>
+                                    <Button onClick={() => { alert("click on Image") }} style={{ width: '100%', backgroundColor: 'rgba(0, 0, 0, 0.5)', color: 'whitesmoke' }}>Detail</Button>
+
                                 </>
                             </motion.div>
                         </>
