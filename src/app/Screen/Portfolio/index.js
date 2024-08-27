@@ -6,8 +6,9 @@ import NavbarCompo from "../../Component/Navbar";
 import { Images } from "../../../assets/ima";
 import DhruveshImage from '../../../assets/Images/Dhruvesh.jpg';
 import { Col, Flex, Row, Typography } from "antd";
-import { introdata } from "../../Utils/content_option";
+import { data, introdata } from "../../Utils/content_option";
 import { RobotFilled } from "@ant-design/icons";
+import Card from "../../Component/Card/Index";
 
 const Portfolio = () => {
     const isMobile = useMediaQuery("(max-width:600px)");
@@ -17,14 +18,26 @@ const Portfolio = () => {
         <>
             <Grid
                 style={{
-                    height: '100vh',
                     display: "flex",
                     justifyContent: 'center',
                     alignItems: 'center',
                 }}
             >
 
-                Portfolio
+                <Grid style={{
+                    gap: 50,
+                    display: 'flex',
+                    padding: 20,
+                    width: isMobile || istablet ? "100%" : "80%",
+                    flexWrap: 'wrap',
+                    alignItems: 'center',
+                    justifyContent: "space-evenly"
+                }}>
+                    {data.map((item, index) => (
+                        <Card key={index} data={item} />
+                    ))}
+                </Grid>
+
             </Grid>
         </>
     );

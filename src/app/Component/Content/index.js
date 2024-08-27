@@ -92,8 +92,8 @@ const Content = (props) => {
                     display: "flex",
                     flexDirection: isMobile || istablet ? "column" : "row",
                     gap: Contact ? 30 : 10,
-                    marginTop: 30,
-                    marginBottom: 30,
+                    marginTop: 50,
+                    marginBottom: 50,
                     paddingBottom: 20,
                     borderBottom: '0.5px solid gray',
                 }}

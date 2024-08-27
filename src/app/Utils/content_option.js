@@ -1,3 +1,7 @@
+import Dhruvesh from '../../assets/Images/Dhruvesh.jpg'
+import Reanlo from '../../assets/Images/Reanlo.jpg'
+
+
 const logotext = "Dhruvesh Rana";
 const meta = {
   title: "Dhruvesh Rana",
@@ -23,23 +27,44 @@ const dataabout = {
   aboutme:
     "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent quis dolor id ligula semper elementum feugiat pretium nulla. Nunc non commodo dolor. Nunc mollis dignissim facilisis. Morbi ut magna ultricies.",
 };
-const worktimeline = [
+
+const data = [
   {
-    jobtitle: "Designer of week",
-    where: "YAdfi",
-    date: "2020",
+    Image: Reanlo,
+    title: "Reanlo",
+    description: 'Reanlo is a cutting-edge book management application designed to enhance your reading experience and streamline your book collection management.'
   },
   {
-    jobtitle: "Designer of week",
-    where: "Jamalya",
-    date: "2019",
+    Image: Dhruvesh,
+    title: "Dhruvesh Rana",
+    description: 'lorem25aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaassssssssssssssssssssssssssss'
   },
   {
-    jobtitle: "Designer of week",
-    where: "ALquds",
-    date: "2019",
+    Image: Dhruvesh,
+    title: "Dhruvesh Rana",
+    description: 'lorem25aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaassssssssssssssssssssssssssss'
   },
-];
+  {
+    Image: Dhruvesh,
+    title: "Dhruvesh Rana",
+    description: 'lorem25aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaassssssssssssssssssssssssssss'
+  },
+  {
+    Image: Dhruvesh,
+    title: "Dhruvesh Rana",
+    description: 'lorem25aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaassssssssssssssssssssssssssss'
+  },
+  {
+    Image: Dhruvesh,
+    title: "Dhruvesh Rana",
+    description: 'lorem25aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaassssssssssssssssssssssssssss'
+  },
+  {
+    Image: Dhruvesh,
+    title: "Dhruvesh Rana",
+    description: 'lorem25aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaassssssssssssssssssssssssssss'
+  }
+]
 
 const skills = [
   {
@@ -182,8 +207,8 @@ const socialprofils = {
 export {
   meta,
   dataabout,
+  data,
   dataportfolio,
-  worktimeline,
   skills,
   services,
   introdata,
