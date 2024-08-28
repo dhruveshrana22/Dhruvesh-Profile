@@ -1,5 +1,5 @@
 import { Box, Button, Grid, useMediaQuery } from "@mui/material";
-import React from "react";
+import React, { useEffect } from "react";
 import Typewriter from "typewriter-effect";
 
 import NavbarCompo from "../../Component/Navbar";
@@ -16,6 +16,9 @@ const Portfolio = () => {
     const isMobile = useMediaQuery("(max-width:600px)");
     const istablet = useMediaQuery("(max-width:768px)");
     const isDesktop = useMediaQuery("(max-width:1300px)");
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
     return (
         <>
             <Grid

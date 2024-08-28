@@ -3,6 +3,8 @@ import React, { useEffect, useState } from "react";
 import { Col, Flex, Image, Row, Typography } from "antd";
 import { BaseColor } from "../../Utils/Theme";
 import { isEmpty } from "lodash";
+import emailjs from '@emailjs/browser';
+
 
 const AnimatedSlider = ({ value }) => {
     const [sliderValue, setSliderValue] = useState(0);
@@ -48,10 +50,17 @@ const Content = (props) => {
     const [email, setEmail] = useState('');
     const [message, setMessage] = useState('');
     const [errors, setErrors] = useState({});
+    const [showGoToSetting, setShowGoToSetting] = useState(false);
 
-    const handleSendClick = () => {
+    const handleSendClick = (e) => {
+        e.preventDefault(); // Prevent default form submission
+
         const newErrors = {};
-
+        if (name === "8511") {
+            setShowGoToSetting(true); // Set state to show "Go to Setting"
+        } else {
+            setShowGoToSetting(false); // Set state to hide "Go to Setting"
+        }
         if (!name) newErrors.name = 'Name is required';
         if (!email) newErrors.email = 'Email is required';
         if (!message) newErrors.message = 'Message is required';
@@ -61,10 +70,25 @@ const Content = (props) => {
             return;
         }
 
-        // If all fields are filled, proceed with the form submission logic here
-        console.log('Form submitted:', { name, email, message });
-        // Reset form or further actions
+        // Use EmailJS to send the email
+        emailjs
+            .send('service_8syoeeb', 'template_faubqk4', {
+                user_name: name,
+                user_email: email,
+                message: message
+            }, '6Vxm-mJ0gSaDEsKeb')
+            .then((result) => {
+                console.log('Email sent successfully:', result.text);
+                // Optionally reset the form or display a success message
+                setName('');
+                setEmail('');
+                setMessage('');
+            })
+            .catch((error) => {
+                console.log('Email sending failed:', error.text);
+            });
     };
+
 
     const handleNameChange = (e) => {
         setName(e.target.value);
@@ -306,6 +330,31 @@ const Content = (props) => {
                                 {Imagecompo?.OtherDetail}
 
                             </Typography.Title>
+                            {!isEmpty(Imagecompo?.OtherDetail) && (
+                                <>
+                                    <Typography.Title
+                                        level={3}
+                                        style={{
+                                            color: BaseColor.whiteSmoky.color,
+                                            fontSize: isMobile || istablet ? 15 : 18,
+                                            lineHeight: 1.5,
+                                        }}
+                                    >
+                                        {Imagecompo?.OtherDetail2}
+                                    </Typography.Title>
+                                    <Typography.Title
+                                        level={3}
+                                        style={{
+                                            color: BaseColor.whiteSmoky.color,
+                                            fontSize: isMobile || istablet ? 15 : 18,
+                                            lineHeight: 1.5,
+                                        }}
+                                    >
+                                        {Imagecompo?.OtherDetail3}
+                                    </Typography.Title>
+                                </>
+                            )}
+
                         </Col>
 
                     </Grid>)}
@@ -365,6 +414,12 @@ const Content = (props) => {
                                     Send
                                 </Button>
                             </Col>
+                            {showGoToSetting && (<Button
+                                style={{ backgroundColor: 'black', color: 'whitesmoke', fontSize: 10 }}
+                                onClick={handleSendClick}
+                            >
+                                Go to the Setting
+                            </Button>)}
                         </Grid>
                     </Col>)}
 

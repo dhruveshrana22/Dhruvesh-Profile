@@ -1,5 +1,5 @@
 import { Box, Button, Grid, useMediaQuery } from "@mui/material";
-import React from "react";
+import React, { useEffect } from "react";
 import { Col, Typography } from "antd";
 import { introdata, services, skills } from "../../Utils/content_option";
 import Hader from "../../Component/Hader";
@@ -11,6 +11,9 @@ const About = () => {
     const isMobile = useMediaQuery("(max-width:600px)");
     const istablet = useMediaQuery("(max-width:768px)");
     const isDesktop = useMediaQuery("(max-width:1300px)");
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
     return (
         <>
             <Grid

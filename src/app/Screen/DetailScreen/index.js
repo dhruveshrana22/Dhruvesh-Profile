@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useLocation, useParams } from "react-router-dom";
 import { Col, Typography } from "antd";
 import { data, introdata, services, skills } from "../../Utils/content_option";
@@ -13,7 +13,9 @@ const DetailScreen = () => {
     const isMobile = useMediaQuery("(max-width:600px)");
     const istablet = useMediaQuery("(max-width:768px)");
     const isDesktop = useMediaQuery("(max-width:1300px)");
-
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
     const matchedObject = data.find(item => item.id === id);
     // Now you can use the id in your component logic
     return (

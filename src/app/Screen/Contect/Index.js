@@ -1,6 +1,6 @@
 import { Box, Grid, useMediaQuery } from '@mui/material';
 import { Col } from 'antd';
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Slide } from 'react-awesome-reveal';
 import { Element } from 'react-scroll';
 import Hader from '../../Component/Hader';
@@ -11,6 +11,9 @@ const Contect = () => {
     const isMobile = useMediaQuery('(max-width:600px)'); // Adjust the breakpoint as needed
     const istablet = useMediaQuery("(max-width:768px)");
     const isDesktop = useMediaQuery("(max-width:1300px)");
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
     return (
         <>
             <Grid

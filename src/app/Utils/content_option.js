@@ -1,6 +1,8 @@
 import Dhruvesh from '../../assets/Images/Dhruvesh.jpg'
 import Reanlo from '../../assets/Images/Reanlo.jpg'
 import Vypar from '../../assets/Images/Vyapar.png'
+import Shoes from '../../assets/Images/Shoes.jpg'
+import Tic from '../../assets/Images/Tic.jpeg'
 
 
 const logotext = "Dhruvesh Rana";
@@ -44,7 +46,7 @@ const data = [
 
     Technologies: " React Native, Redux, REST API",
     title5: 'OtherDetail',
-    OtherDetail: "I worked on this project as a junior developer",
+    OtherDetail: "Reanlo is a professional book-centric social media platform, akin to Instagram but tailored for book lovers. Users can create and share posts about books, engage with comments, and receive notifications for interactions. The app includes an intuitive admin panel for content management, a detailed book information page, and a discover section to explore new books. Users can follow and unfollow authors and fellow readers, fostering a community of book enthusiasts. Reanlo blends the interactive features of social media with the rich content of book discussions, making it a go-to platform for book lovers.",
 
   },
   {
@@ -61,7 +63,41 @@ const data = [
 
     Technologies: "React, Redux, Firebase",
     title5: 'OtherDetail',
-    OtherDetail: "I worked on this project as a Solo developer",
+    OtherDetail: "Business Maintenance is a comprehensive application designed to streamline business operations. It allows users to create dynamic bills tailored to customer needs, manage customer and product information, and efficiently track transactions. The app features a detailed View Bill section, where users can monitor customer accounts, distinguishing between pending and cleared amounts, ensuring accurate financial tracking.",
+    OtherDetail2: "Additionally, the application includes functionality to add and manage dealer information. In the dealer section, users can log incoming goods and associate them with specific bills, providing a clear overview of inventory and supplier transactions. This feature mirrors the efficiency of the View Bill section, offering a unified experience across the platform.",
+    OtherDetail3: "With its robust functionality, Business Maintenance empowers businesses to maintain accurate records, optimize transactions, and enhance overall operational efficiency."
+  },
+  {
+    id: 3,
+    Image: Shoes,
+    title: "Shoes App",
+    description: 'The Shoes App is a modern, user-friendly platform designed to enhance your shopping experience for footwear. It allows users to effortlessly browse through a curated selection of shoes, with features tailored for convenience and personalization',
+    title2: 'About App',
+    description2: 'This web application is designed for businesses to manage their billing, customer, and dealer information efficiently. Users can add new bills, manage customer and dealer information, and create bills by adding products. The application streamlines business operations by storing all customer data securely in a database and providing a user-friendly interface for daily tasks.',
+    title3: 'Role',
+
+    Role: "Sole Developer",
+    title4: 'Technologies',
+
+    Technologies: "React Native, Redux, Firebase",
+    title5: 'OtherDetail',
+    OtherDetail: "Select Your Shoes: Explore a wide variety of shoes, from casual sneakers to formal wear, with detailed product descriptions, high-quality images, and user reviews to help you make the best choice. ",
+    OtherDetail2: "Add to Cart: Seamlessly add your favorite pairs to the cart, with options to adjust quantities, select sizes, and apply discounts or promo codes at checkout.",
+    OtherDetail3: " Add to Favorites: Save your preferred choices to a personalized favorites list, allowing you to revisit and purchase them later with ease.",
+  },
+  {
+    id: 4,
+    Image: Tic,
+    title: "4x4 Tic Tac Toe App",
+    description: 'Create for my fun Experience a fresh take on Tic Tac Toe with a 4x4 grid, offering a more complex and challenging gameplay compared to the classic 3x3 version.',
+    title2: 'About App',
+    description2: 'Elevate your classic Tic Tac Toe experience with our innovative 4x4 Tic Tac Toe Challenge! Designed for enthusiasts seeking a more strategic and engaging twist on the traditional game, this app brings you a larger grid and exciting new gameplay dynamics.',
+    title3: 'Role',
+
+    Role: "Sole Developer",
+    title4: 'Technologies',
+
+    Technologies: "React Native, Redux, Firebase",
   },
 
 
