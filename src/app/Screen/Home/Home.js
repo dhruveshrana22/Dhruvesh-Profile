@@ -1,4 +1,4 @@
-import { Box, Button, Grid, useMediaQuery } from "@mui/material";
+import { Box, Button, Grid, useMediaQuery, AppBar, Toolbar } from "@mui/material";
 import React from "react";
 import Typewriter from "typewriter-effect";
 
@@ -10,6 +10,10 @@ import { introdata } from "../../Utils/content_option";
 import { RobotFilled } from "@ant-design/icons";
 import { useNavigate } from "react-router-dom";
 import { Slide } from "react-awesome-reveal";
+import Portfolio from "../Portfolio";
+import Contect from "../Contect/Index";
+import About from "../About";
+import { Link } from "react-scroll";
 
 const Home = () => {
   const isMobile = useMediaQuery("(max-width:600px)");
@@ -19,6 +23,35 @@ const Home = () => {
 
   return (
     <>
+
+      {!isMobile && (
+        <AppBar style={{ alignItems: 'flex-end', marginBottom: 20, width: 400, position: "fixed", right: '10%', background: '#0c0c0c' }}>
+          <Toolbar>
+            {/* Smooth scroll to sections */}
+            <Button color="inherit">
+              <Link to="home-section" smooth={true} duration={500}>
+                Home
+              </Link>
+            </Button>
+            <Button color="inherit">
+              <Link to="about-section" smooth={true} duration={500}>
+                About
+              </Link>
+            </Button>
+            <Button color="inherit">
+              <Link to="portfolio-section" smooth={true} duration={500}>
+                Projects
+              </Link>
+            </Button>
+            <Button color="inherit">
+              <Link to="contact-section" smooth={true} duration={500}>
+                Contact
+              </Link>
+            </Button>
+          </Toolbar>
+        </AppBar>
+      )}
+
       <Slide direction="down" duration={1000}
         style={{
           display: "flex",
@@ -27,7 +60,7 @@ const Home = () => {
         }}
       >
 
-        <Col style={{
+        <Col id="home-section" style={{
           display: "flex",
           flexDirection: isMobile || istablet ? "column-reverse" : "row",
           justifyContent: isDesktop ? "space-between" : "space-around",
@@ -35,10 +68,12 @@ const Home = () => {
           gap: 10,
           top: isMobile || istablet ? 50 : "",
         }}>
-          <Grid width={isMobile || istablet ? "100%" : "50%"} style={{
-            display: 'flex', flexDirection: 'column',
-            justifyContent: 'flex-start', alignItems: 'flex-start'
-          }} >
+          <Grid width={isMobile || istablet ? "100%" : "50%"}
+
+            style={{
+              display: 'flex', flexDirection: 'column',
+              justifyContent: 'flex-start', alignItems: 'flex-start'
+            }} >
             <Col style={{ padding: 10 }}>
               <h1 style={{ color: 'whitesmoke', fontSize: isMobile || istablet ? 20 : 45 }}>I'm Dhruvesh Rana</h1>
               <h2 style={{ color: 'whitesmoke', fontSize: isMobile || istablet ? 15 : 25 }}><Typewriter
@@ -92,6 +127,7 @@ const Home = () => {
                 boxShadow: "0px 0px 30px rgba(255, 255, 255, 0.5)", // White shadow on all sides
                 filter: "grayscale(100%) blur(2px) sepia(0.4) brightness(1.1)", // Black-and-white filter with blur and warmth
                 transition: "filter 0.3s ease-in-out", // Smooth transition
+                animation: "rotateIn 2s ease-in-out",
               }}
               onMouseEnter={(e) => {
                 e.currentTarget.style.filter = "grayscale(100%) blur(0px) sepia(0.4) brightness(1.1)"; // Remove blur on hover, keep black-and-white effect
@@ -102,6 +138,20 @@ const Home = () => {
                 document.getElementById("hoverText").style.opacity = 1; // Show text when not hovering
               }}
             />
+            <style>
+              {`
+  @keyframes rotateIn {
+    0% {
+      transform: rotate(-360deg) scale(1); /* Start with a full rotation and small scale */
+      opacity: 0; /* Start invisible */
+    }
+    100% {
+      transform: rotate(0deg) scale(1); /* End with normal orientation and full scale */
+      opacity: 1; /* End fully visible */
+    }
+  }
+`}
+            </style>
 
             <div
               id="hoverText"
@@ -135,7 +185,37 @@ const Home = () => {
 
 
         </Col>
+
       </Slide>
+      <Grid
+        style={{
+          borderTop: '2px dashed gray', // Add top border with gray color
+        }}
+      />
+      <div id="portfolio-section">
+        {/* Portfolio Section */}
+        <Portfolio />
+      </div>
+      <Grid
+        style={{
+          borderTop: '2px dashed gray', // Add top border with gray color
+        }}
+      />
+      <div id="about-section">
+        {/* About Section */}
+        <About />
+      </div>
+      <Grid
+        style={{
+          borderTop: '2px dashed gray', // Add top border with gray color
+        }}
+      />
+
+      <div id="contact-section">
+        {/* Contact Section */}
+        <Contect />
+      </div>
+
     </>
   );
 };
