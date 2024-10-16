@@ -102,7 +102,7 @@ const Home = () => {
                 >My Projects</Button>
                 <Button variant="contained"
                   onClick={() => { navigate('/Contect') }}
-                  style={{ backgroundColor: 'whitesmoke', fontSize: isMobile || istablet ? 10 : 15, color: 'black' }}>Contect</Button>
+                  style={{ backgroundColor: 'whitesmoke', fontSize: isMobile || istablet ? 10 : 15, color: 'black' }}>Contact</Button>
               </Row>
             </Flex>
           </Grid>
