@@ -25,7 +25,7 @@ const Home = () => {
     <>
 
       {!isMobile && (
-        <AppBar style={{ alignItems: 'flex-end', marginBottom: 20, width: 400, position: "fixed", right: '10%', background: '#0c0c0c' }}>
+        <AppBar style={{ alignItems: 'flex-end', marginBottom: 20, width: 400, position: "fixed", right: '10%', backgroundColor: 'transparent' }}>
           <Toolbar>
             {/* Smooth scroll to sections */}
             <Button color="inherit">
@@ -142,7 +142,7 @@ const Home = () => {
               {`
   @keyframes rotateIn {
     0% {
-      transform: rotate(-360deg) scale(1); /* Start with a full rotation and small scale */
+      transform: rotate(-30deg) scale(1); /* Start with a full rotation and small scale */
       opacity: 0; /* Start invisible */
     }
     100% {
@@ -178,7 +178,7 @@ const Home = () => {
                 },
               }}
             >
-              {isMobile || istablet ? "Click Me" : "Hover Me"}
+              {/* {isMobile || istablet ? "Click Me" : "Hover Me"} */}
             </div>
           </Grid>
 

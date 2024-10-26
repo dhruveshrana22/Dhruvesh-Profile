@@ -1,35 +1,37 @@
-import { Box, Grid, useMediaQuery } from "@mui/material";
+import { Grid, useMediaQuery } from "@mui/material";
 import Grid2 from "@mui/material/Unstable_Grid2/Grid2";
-import { Col, Flex, Row, Typography } from "antd";
+import { Col, Row, Typography } from "antd";
 import React from "react";
+import LinkedInIcon from '@mui/icons-material/LinkedIn';
+import InstagramIcon from '@mui/icons-material/Instagram';
+import { BaseColor } from "../../Utils/Theme";
+import { BgColorsOutlined } from "@ant-design/icons";
 
 const Follow = () => {
   const isMobile = useMediaQuery("(max-width:600px)");
   const istablet = useMediaQuery("(max-width:768px)");
-  const deviceWidth = window.innerWidth;
-
+  const topPosition = window.innerHeight / 2;
   return (
     <>
       <Grid2
-        bottom={isMobile || istablet ? 10 : 0}
-        left={!isMobile || !istablet ? 0 : 0}
-        justifyContent={"center"}
-        width={"100%"}
-        position={"absolute"}
+        position="absolute"
         style={{
-          display: "flex",
+          top: isMobile || istablet ? 0 : topPosition, // Position at half of the window height
+          right: isMobile || istablet ? "" : 50, // Stretch to the right of the window
+          transform: 'translateY(-50%)', // Center the element vertically
         }}
       >
-        <Col style={{}}>Follow me --</Col>
-        <Row
-          style={{
-            gap: 5,
-          }}
-        >
-          <Col>Linkedin</Col>
-          <Col>Linkedin</Col>
-          <Col>Linkedin</Col>
-        </Row>
+
+        <Col>
+          <LinkedInIcon
+            style={{ fontSize: isMobile ? 30 : 40, color: BaseColor.whiteSmoky.color, }} // Adjust size and color as needed
+          />
+        </Col>
+        <Col>
+          <InstagramIcon
+            style={{ fontSize: isMobile ? 30 : 40, color: BaseColor.whiteSmoky.color }} // Adjust size and color as needed
+          />
+        </Col>
       </Grid2>
     </>
   );
