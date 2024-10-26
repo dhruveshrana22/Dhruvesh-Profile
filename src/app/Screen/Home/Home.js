@@ -29,6 +29,7 @@ const Home = () => {
           <Toolbar>
             {/* Smooth scroll to sections */}
             <Button color="inherit">
+
               <Link to="home-section" smooth={true} duration={500}>
                 Home
               </Link>
