@@ -96,8 +96,8 @@ const Home = () => {
                 </Typography>
               </Col>
             </Col>
-            <Flex style={{ width: '100%', height: 100, alignItems: 'center', justifyContent: 'center' }}>
-              <Row style={{ width: '100%', gap: 20 }}>
+            <Flex style={{ width: '100%', height: 200, alignItems: 'center', justifyContent: 'center', }}>
+              <Row style={{ width: '100%', gap: isMobile || istablet ? 10 : 15 }}>
                 <Button variant="outlined" style={{ fontSize: isMobile || istablet ? 10 : 15, color: "whitesmoke" }}
                   onClick={() => { navigate('/Portfolio') }}
                 >My Projects</Button>
