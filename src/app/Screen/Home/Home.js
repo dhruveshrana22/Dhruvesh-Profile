@@ -104,6 +104,19 @@ const Home = () => {
                 <Button variant="contained"
                   onClick={() => { navigate('/Contect') }}
                   style={{ backgroundColor: 'whitesmoke', fontSize: isMobile || istablet ? 10 : 15, color: 'black' }}>Contact</Button>
+                <Button
+                  variant="contained"
+                  style={{
+                    backgroundColor: 'whitesmoke',
+                    fontSize: isMobile || istablet ? 10 : 15,
+                    color: 'black'
+                  }}
+                  component="a"
+                  href="/Dhruvesh_Rana_Resume.pdf" // Adjust this path to where your PDF is located in the public folder
+                  download="Dhruvesh_Rana_Resume.pdf"
+                >
+                  Download Resume
+                </Button>
               </Row>
             </Flex>
           </Grid>
